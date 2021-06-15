@@ -7,4 +7,4 @@ Projeto da cadeira de Gerenciamento de dados e informação
 - Vinicius Cardoso Novaes - vcn2 - vcn2@cin.ufpe.br
 - Gabriel Almeida Schneider - gas6 - gas6@cin.ufpe.br
 - Gabriel Silva de Oliveira - gso - gso@cin.ufpe.br
-- 
+- Marcus Vinícius de Melo - mvm4 - mvm4@cin.ufpe.br
