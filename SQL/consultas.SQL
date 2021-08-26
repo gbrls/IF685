@@ -41,3 +41,13 @@ WHERE  (pac.cidade, pac.rua) IN
 SELECT med.nome FROM medico med WHERE 
  (SELECT COUNT(tr.cpf_paciente) FROM trata tr WHERE med.cpf = tr.cpf_medico ) > 1;
 
+
+SELECT med.nome FROM medico med WHERE 
+    (med.cidade , med.rua) IN 
+    ( SELECT sup.cidade , sup.rua FROM medico sup WHERE  sup.cpf = med.supervisor ) ;
+
+
+
+SELECT med.nome,  COUNT(tr.cpf_paciente)  FROM medico med  
+      LEFT OUTER JOIN trata tr ON tr.cpf_medico = med.cpf  
+      GROUP BY (med.nome); 
