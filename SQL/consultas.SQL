@@ -31,7 +31,7 @@ UNION
 SELECT NOME FROM MEDICO;
 
 
---subconsulta
+--subconsulta tipo tabela considerando que um paciente pode ser tratado por vários medicos que moram na mesma rua e cidade
 SELECT pac.nome, med.nome FROM  trata tr
  INNER JOIN paciente pac ON pac.cpf = tr.cpf_paciente 
 INNER JOIN medico med ON med.cpf = tr.cpf_medico
