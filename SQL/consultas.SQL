@@ -7,8 +7,8 @@ WHERE SUPERVISOR IS NOT NULL
 GROUP BY SUPERVISOR;
 
 
-INNER JOIN COM GROUP BY
-mostra o nome do supervisor e a quantidade de supervisionados desde que ele supervisione mais de 2 medicos. 
+--INNER JOIN COM GROUP BY
+--mostra o nome do supervisor e a quantidade de supervisionados desde que ele supervisione mais de 2 medicos. 
 
 SELECT M1.NOME AS SUPERVISOR, COUNT(M1.NOME) AS QTD_SUPERVISIONADO
 FROM MEDICO M1 INNER JOIN
@@ -25,3 +25,8 @@ SELECT NOME
 FROM PACIENTE
 WHERE CPF IN (SELECT CPF
 FROM ARTE);
+
+SELECT NOME FROM PACIENTE
+UNION
+SELECT NOME FROM MEDICO;
+
