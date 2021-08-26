@@ -1,6 +1,4 @@
 
-CONSULTA COM GROUP BY
-
 SELECT SUPERVISOR, COUNT(*)
 FROM MEDICO
 WHERE SUPERVISOR IS NOT NULL
@@ -39,6 +37,7 @@ WHERE  (pac.cidade, pac.rua) IN
       ( SELECT cidade, rua FROM medico   WHERE cpf = med.cpf);
 
 
-SELECT T1.NOME AS NOME, COUNT(T2.CPF_PACIENTE) AS QUANT_TRATAMENTOS
-FROM (MEDICO T1 LEFT JOIN TRATA T2 ON T1.CPF = T2.CPF_MEDICO)
-GROUP BY T1.NOME;
+-- subconsulta escalar camarada
+SELECT med.nome FROM medico med WHERE 
+ (SELECT COUNT(tr.cpf_paciente) FROM trata tr WHERE med.cpf = tr.cpf_medico ) > 1;
+
